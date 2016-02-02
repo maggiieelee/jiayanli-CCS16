@@ -1,0 +1,53 @@
+function setup() {
+  createCanvas(800,800);
+  strokeWeight(0.1);
+}
+
+function draw() {
+  
+  //greenline
+  for (x=100; x<=700; x+=10){
+    stroke('#ADFF2F');
+    line(x,100,x,700);
+  }
+  
+  //yellowlineup
+  for (y=100; y<=400; y+=10){
+    stroke('yellow');
+    line(400,y,700,y);
+  }
+  
+  //yellowlinedown
+  for (y=400; y<=700; y+=10){
+    stroke('yellow');
+    line(100,y,700,y);
+  }
+  
+  //redline
+  for (x=110;x<=400; x+=10){
+    stroke('red');
+    line(100,x+300,x,400);
+  }
+  
+  for(x=410; x<=700; x+=10){
+   stroke('red');
+   line(x,400,x-300,700);
+  }
+  
+  for(y=410; y<=700; y+=10){
+    stroke('red');
+    line(700,y,y,700);
+  }
+  
+  //blueline
+  
+  for (x=400; x<=700; x+=10){
+   stroke('blue');
+   line(x,400,700,1100-x);
+  }
+  
+  for(y=410; y<=700; y+=10){
+   stroke('blue');
+   line(400,y,1100-y,700);
+  }
+}
