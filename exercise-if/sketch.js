@@ -1,14 +1,14 @@
 function setup() {
-   createCanvas(800,600);
+   createCanvas(windowWidth,windowHeight);
    noStroke();
 }
 
 function draw() {
-  if(mouseX<=400 && mouseY<=400){
-    rect(100,100,200,200);
+  if(mouseX<=width/2){
+    rect(mouseX,mouseY,20,20);
     fill('blue');
   } else {
-    ellipse(500,400,200,200);
+    ellipse(mouseX,mouseY,20,20);
     fill('red');
   }
 }
