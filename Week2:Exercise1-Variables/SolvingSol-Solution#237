@@ -1,0 +1,39 @@
+function setup() {
+  createCanvas(600,400);
+  background(228)
+}
+
+function draw() {
+  
+  stroke(191);
+  for (u=0; u<=600; u+=50){
+    line(u,0,u,400);
+  }
+  
+  for (r=0; r<=400; r+=50){
+    line(0,r,600,r);
+  }
+  
+  var x=random(0,600);
+  var y=random(0,400);
+  
+  //blueline
+  stroke('blue');
+  line(0,0,x,y);
+  line(0,400,x,y);
+  line(600,0,x,y);
+  line(600,400,x,y);
+  
+  //yellowline
+  stroke('yellow');
+  line(300,200,x,y);
+  
+  //redline
+  stroke('red');
+  line(0,200,x,y);
+  line(600,200,x,y);
+  line(300,0,x,y);
+  line(300,400,x,y);
+  line(400,0,x,y);
+  line(200,400,x,y);
+}
