@@ -23,6 +23,7 @@ Particle.prototype = {
 
 var particleHolder = [];
 
+
 function setup(){
   createCanvas(windowWidth,windowHeight);
   for (var i=0; i< 500; i++){
@@ -36,4 +37,5 @@ function draw(){
     particleHolder[i].explode();
     particleHolder[i].display();
   }
+
 }
