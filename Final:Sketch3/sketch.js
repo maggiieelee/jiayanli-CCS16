@@ -1,5 +1,5 @@
 
-  function Particle(x,y) {
+function Particle(x,y) {
   this.x = x;
   this.y = y;
   this.speed = random(5);
@@ -9,7 +9,7 @@
   this.lifespan=255;
 }
 
-  Particle.prototype = {
+Particle.prototype = {
   constructor: Particle,
   explode : function(){  
     this.x += this.xVel*this.speed;
@@ -28,24 +28,29 @@ var particleHolder = [];
 
 function setup(){
   createCanvas(windowWidth,windowHeight);
-  
+
   for (var i=0; i< 500; i++){
     particleHolder[i] = new Particle(width/2, height/2);
   }
-  
+
 }
 
 function draw(){
   background(0);
-  
+
   textSize(20);
   textAlign(CENTER);
   stroke(255);
   text("Click for More...", width/2,50);
-  
+
   for (var i=0; i < particleHolder.length; i++){
-    particleHolder[i].explode();
-    particleHolder[i].display();
+    if(particleHolder[i].lifespan <= 0){
+      particleHolder.splice(i,1);
+    }
+    else {
+      particleHolder[i].explode();
+      particleHolder[i].display();
+    }
   }
 }
 
@@ -54,3 +59,7 @@ function mouseClicked() {
     particleHolder.splice(particleHolder.length,0, new Particle(mouseX,mouseY));
   }
 }
+  
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
